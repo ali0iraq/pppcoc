@@ -85,23 +85,6 @@ client.on('message', message => {
 
  
  
-
-
- bot.on('message', function(message) {
-    if (message.channel.type === "dm") {
-        if (message.author.id === bot.user.id) return;
-        var iiMo = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setTimestamp()
-        .setTitle('``هذة الشخص قام بالكتابة !``')
-        .setThumbnail(`${message.author.avatarURL}`)
-        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
-        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
-    bot.channels.get("461128496790634506").send({embed:iiMo});
-    }
-});
-
-
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
 
 client.on('message', message => {
