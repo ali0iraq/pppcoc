@@ -87,21 +87,22 @@ client.on('message', message => {
  
 
 
- bot.on('message', function(message) {
-    if (message.channel.type === "dm") {
-        if (message.author.id === bot.user.id) return;
-        var iiMo = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setTimestamp()
-        .setTitle('``هذة الشخص قام بالكتابة !``')
-        .setThumbnail(`${message.author.avatarURL}`)
-        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
-        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
-    bot.channels.get("461128496790634506").send({embed:iiMo});
-    }
+uesr.on('message', function(message) {
+  if (message.channel.type === "dm") {
+      if (message.author.id === uesr.user.id) return;
+      var iiMo = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setTimestamp()
+      .setTitle('``هذة الشخص قام بالكتابة !``')
+      .setThumbnail(`${message.author.avatarURL}`)
+      .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
+      .setFooter(`From **${message.author.tag} (${message.author.id})**`)
+  uesr.channels.get("461128496790634506").send({embed:iiMo});
+  }
 });
 
-bot.login ("NDU3MzI0ODY2MTgyNDQ3MTI2.Dg_ANg.wKr6my58fxNdg0ljWJz3H53DDKQ")
+uesr.login ("NDU3MzI0ODY2MTgyNDQ3MTI2.Dg_ANg.wKr6my58fxNdg0ljWJz3H53DDKQ")
+
 
  bot.on('message', function(message) {
     if (message.channel.type === "dm") {
