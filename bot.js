@@ -87,31 +87,6 @@ client.on('message', message => {
  
 
 
-const dev = ['457324866182447126' , '211969554061066243' , '' , ''];
-const admi = ".";
-bot.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!dev.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(admi + 'ply')) {
-    bot.user.setGame(argresult);
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(admi + 'wt')) {
-  bot.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(admi + 'ls')) {
-  bot.setActivity(argresult , {type:'LISTENING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(admi + 'st')) {
-      bot.message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  }
-  });
-
-bot.login ("NDU3MzI0ODY2MTgyNDQ3MTI2.Dg_ANg.wKr6my58fxNdg0ljWJz3H53DDKQ")
-
  bot.on('message', function(message) {
     if (message.channel.type === "dm") {
         if (message.author.id === bot.user.id) return;
