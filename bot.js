@@ -52,30 +52,39 @@ client.on('message', message => {
   });
 
 
-const ow = ['211969554061066243' , '' , '' , ''];
-const admin = "^";
-bot.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!ow.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(admin + 'ply')) {
-    bot.user.setGame(argresult);
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(admin + 'wt')) {
-  bot.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(admin + 'ls')) {
-  bot.setActivity(argresult , {type:'LISTENING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(admin + 'st')) {
-      bot.message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  }
-  });
+ client.on('message', message => {
+    if(message.content === "-^bot") {
+        const embed = new Discord.RichEmbed()
+        .setColor("#00FFFF")
+  .addField('**الذاكرة المستخدمة 💾**', `${(process.memoryUsage().rss / 1000000).toFixed()}MB`, true)
+         .addField('**سرعة الاتصال📡**' , `${Date.now() - message.createdTimestamp}` + ' ms')
+        .addField('**استخدام المعالج💿**', `${(process.cpuUsage().rss / 10000).toFixed()}%`, true)
+        .addField('**:globe_with_meridians: عدد السيرفرات**' , `${client.guilds.size}`, true)
+        .addField('**عدد المستخدمين 👥 **' , `${client.users.size}`, true)
+               message.channel.sendEmbed(embed);
+           }
+});
+  
 
-bot.login ('MzQ3NDk4NzMwNzcxMDU0NTky.Df8wow.CBTSCAUK1d60qrDE1O5_lylMj3o')
+client.on('message', message => {
+    if (!message.guild) return; 
+    if (message.content.startsWith("رابط")) {
+
+        message.channel.createInvite({
+        thing: true,
+        maxUses: 100,
+        maxAge: 86400
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+  message.channel.send(`** تم أرسال الرابط برسالة خاصة **`)
+
+      message.author.send(`**هذا الرابط ل 100 شخص ويمتد لمدة يوم فقط **`)
+    }
+});
+
+ 
+ 
 
 
 const dev = ['457324866182447126' , '211969554061066243' , '' , ''];
@@ -101,7 +110,7 @@ bot.on('message', message => {
   }
   });
 
-bot.login ("NDU3MzI0ODY2MTgyNDQ3MTI2.Dg_ANg.wKr6my58fxNdg0ljWJz3H53DDKQ")
+bot.login ("token-neo")
 
  bot.on('message', function(message) {
     if (message.channel.type === "dm") {
@@ -113,11 +122,25 @@ bot.login ("NDU3MzI0ODY2MTgyNDQ3MTI2.Dg_ANg.wKr6my58fxNdg0ljWJz3H53DDKQ")
         .setThumbnail(`${message.author.avatarURL}`)
         .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
         .setFooter(`From **${message.author.tag} (${message.author.id})**`)
-    bot.channels.get("353921177351356417").send({embed:iiMo});
+    bot.channels.get("461128496790634506").send({embed:iiMo});
     }
 });
 
-bot.login ("NDU3MzI0ODY2MTgyNDQ3MTI2.Dg_ANg.wKr6my58fxNdg0ljWJz3H53DDKQ")
+bot.login ("token-neo")
+
+ bot.on('message', function(message) {
+    if (message.channel.type === "dm") {
+        if (message.author.id === bot.user.id) return;
+        var iiMo = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTimestamp()
+        .setTitle('``هذة الشخص قام بالكتابة !``')
+        .setThumbnail(`${message.author.avatarURL}`)
+        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
+        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
+    bot.channels.get("461128496790634506").send({embed:iiMo});
+    }
+});
 
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
