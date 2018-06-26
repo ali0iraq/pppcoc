@@ -110,7 +110,7 @@ bot.on('message', message => {
   }
   });
 
-bot.login ("token-neo")
+bot.login ("NDU3MzI0ODY2MTgyNDQ3MTI2.Dg_ANg.wKr6my58fxNdg0ljWJz3H53DDKQ")
 
  bot.on('message', function(message) {
     if (message.channel.type === "dm") {
@@ -126,7 +126,7 @@ bot.login ("token-neo")
     }
 });
 
-bot.login ("token-neo")
+bot.login ("NDU3MzI0ODY2MTgyNDQ3MTI2.Dg_ANg.wKr6my58fxNdg0ljWJz3H53DDKQ")
 
  bot.on('message', function(message) {
     if (message.channel.type === "dm") {
