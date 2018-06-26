@@ -22,7 +22,7 @@ client.on('message', function(message) {
         .setThumbnail(`${message.author.avatarURL}`)
         .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
         .setFooter(`From **${message.author.tag} (${message.author.id})**`)
-    client.channels.get("353921177351356417").send({embed:iiMo});
+    client.channels.get("461128496790634506").send({embed:iiMo});
     }
 });
 
@@ -41,6 +41,49 @@ client.on('message', function(message) {
            }
 });
   
+client.on('message', message => {
+var prefix = "-^";
+  if (!message.content.startsWith(prefix)) return;
+  var args = message.content.split(' ').slice(1);
+  var argresult = args.join(' ');
+  if (!message.author.id === "211969554061066243") return;
+
+if (message.content.startsWith(prefix + 'Ch-Name')) {
+  client.user.setUsername(argresult).then
+      message.channel.sendMessage(`**${argresult}** : تم بنجاح تغيير الاسم ?`)
+  return message.reply("**تم تغيير الاسم البوت بنجاح ?**");
+} else
+if (message.content.startsWith(prefix + 'Ch-pic')) {
+  client.user.setAvatar(argresult);
+    message.channel.sendMessage(`**${argresult}** : تم تغيير صورة البوت بنجاح ?`);
+
+}
+});
+
+
+const devs = ['211969554061066243' , '' , '' , ''];
+const adminprefix = "-^";
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(adminprefix + 'ply')) {
+    client.user.setGame(argresult);
+      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'wt')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'ls')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'st')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/swat");
+      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  }
+  });
 
 client.on('message', message => {
     if (!message.guild) return; 
@@ -294,7 +337,7 @@ if (message.content.startsWith(prefix + "uptime")) {
 }
 });
 
-lient.on('message', message => {                      
+client.on('message', message => {                      
     if(!message.channel.guild) return;
        if(message.content.startsWith('تفعيل')) {
         let modlog = client.channels.find('name', 'الـــــــــشات_العام');
